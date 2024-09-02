@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="src/output.css">
+    <style>
+        /* Colors */
+        :root {
+            --primary-bg: #1a202c; /* Dark Blue */
+            --secondary-bg: #2d3748; /* Dark Gray */
+            --accent-color: #f6e05e; /* Light Yellow */
+            --text-color: #f7fafc; /* White */
+            --text-dark: #2d3748; /* Dark Gray */
+        }
+
+        /* Hamburger Menu Animation */
+        .menu-open .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .menu-open .bar2 {
+            opacity: 0;
+        }
+        .menu-open .bar3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Menu Transition */
+        .burger-menu {
+            display: none;
+            position: absolute;
+            top: 60px; /* Adjust based on the navbar height */
+            right: 0;
+            background-color: var(--secondary-bg);
+            border: 1px solid #4a5568; /* Border color */
+            border-radius: 0.375rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .burger-menu.show {
+            display: block;
+        }
+
+        .burger-item {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text-color); /* Light text color */
+            text-decoration: none;
+        }
+
+        .burger-item:hover {
+            background-color: #4a5568; /* Background color on hover */
+            color: var(--text-color); /* Text color on hover */
+        }
+
+        /* Stylish Navbar Design */
+        .navbar {
+            background: var(--primary-bg); /* Dark Blue */
+            border-bottom: 2px solid var(--secondary-bg); /* Dark Gray border */
+            position: relative; /* Relative positioning for the burger menu */
+        }
+
+        .navbar a {
+            color: var(--text-color); /* Light text color */
+        }
+
+        .navbar a:hover {
+            color: var(--accent-color); /* Light Yellow on hover */
+        }
+
+        .menu-toggle {
+            border: 2px solid var(--accent-color); /* Light Yellow border for button */
+            border-radius: 0.375rem; /* Rounded corners */
+        }
+
+        .menu-icon .bar {
+            background-color: var(--text-color); /* White bars */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Hero Section */
+        header {
+            background-color: var(--primary-bg); /* Dark Blue */
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(to right, #e2e8f0, #edf2f7); /* Light Gradient */
+        }
+
+        /* Education Section */
+        #education {
+            background: linear-gradient(to right, #e2e8f0, #edf2f7); /* Light Gradient */
+        }
+
+        /* Projects Section */
+        #projects {
+            background: linear-gradient(to right, #fff, #f7fafc); /* Light Gradient */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-bg); /* Dark Blue */
+        }
+
+        footer a {
+            color: var(--text-color); /* Light text color */
+        }
+
+        footer a:hover {
+            color: var(--accent-color); /* Light Yellow on hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Navbar -->
+    <nav class="navbar p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Muhammad Dimas Susanto</a>
+            <button id="menu-toggle" class="menu-toggle lg:hidden flex items-center p-2">
+                <div class="menu-icon flex flex-col space-y-1">
+                    <div class="bar bar1 w-6 h-0.5"></div>
+                    <div class="bar bar2 w-6 h-0.5"></div>
+                    <div class="bar bar3 w-6 h-0.5"></div>
+                </div>
+            </button>
+            <div id="burger-menu" class="burger-menu">
+                <a href="#about" class="burger-item">Tentang</a>
+                <a href="#education" class="burger-item">Edukasi</a>
+                <a href="#projects" class="burger-item">Projek</a>
+                <a href="#contact" class="burger-item">Kontak</a>
+            </div>
+            <ul id="menu" class="lg:flex lg:space-x-4 lg:items-center hidden flex-col lg:flex-row mt-4 lg:mt-0">
+                <li><a href="#about" class="menu-item hover:underline px-4 py-2">Tentang</a></li>
+                <li><a href="#education" class="menu-item hover:underline px-4 py-2">Edukasi</a></li>
+                <li><a href="#projects" class="menu-item hover:underline px-4 py-2">Projek</a></li>
+                <li><a href="#contact" class="menu-item hover:underline px-4 py-2">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white h-screen flex flex-col justify-center items-center text-center">
+        <img src="images/fotosaya.jpg" alt="Foto Saya" class="w-48 h-48 rounded-full mb-4 border-4 border-white">
+        <h1 class="text-4xl font-bold mb-2">Halo, Saya Muhammad Dimas Susanto</h1>
+        <p class="text-lg">Saya seorang Programmer yang berdedikasi dan bersemangat.</p>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-12 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold mb-8 text-center text-gray-800">Tentang Saya</h2>
+            <div class="bg-white shadow-lg rounded-lg p-8">
+                <p class="text-lg text-gray-700 mb-6">
+                    Saya adalah Muhammad Dimas Susanto, seorang programmer dengan pengalaman dalam berbagai proyek. Saya sekolah di SMKN 1 SUBANG di jurusan RPL. Dengan dedikasi dan semangat yang tinggi, saya telah menyelesaikan berbagai proyek yang bermanfaat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-12 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold mb-8 text-center text-gray-800">Edukasi</h2>
+            <div class="bg-white shadow-lg rounded-lg p-8">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-yellow-500 w-16 h-16 flex items-center justify-center rounded-full text-white text-2xl font-semibold">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">SMKN 1 SUBANG</h3>
+                            <p class="text-gray-600">2022 - Sekarang</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-yellow-500 w-16 h-16 flex items-center justify-center rounded-full text-white text-2xl font-semibold">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">SMPN 1 SUBANG</h3>
+                            <p class="text-gray-600">2019 - 2022</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-yellow-500 w-16 h-16 flex items-center justify-center rounded-full text-white text-2xl font-semibold">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">SDIT ALAMY SUBANG</h3>
+                            <p class="text-gray-600">2013 - 2019</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-yellow-500 w-16 h-16 flex items-center justify-center rounded-full text-white text-2xl font-semibold">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">TK YOS SUDARSO</h3>
+                            <p class="text-gray-600">2012 - 2013</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-extrabold mb-8 text-center text-gray-800">Projek</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/projekbankmini.png" alt="Projek 1" class="w-full h-48 object-cover mb-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Projek Bank Mini</h3>
+                        <p class="text-gray-700">Projek membuat akun nasabah</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/projeknilai.png" alt="Projek 2" class="w-full h-48 object-cover mb-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Projek Nescore</h3>
+                        <p class="text-gray-700">Projek melihat nilai tugas-tugas secara online</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/projekmasar.png" alt="Projek 3" class="w-full h-48 object-cover mb-4">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Projek Memasarkan Projek</h3>
+                        <p class="text-gray-700">Projek untuk memasarkan projek yang akan di pasarkan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">&copy; 2024 Muhammad Dimas Susanto. Semua hak cipta dilindungi.</p>
+            <p>Terhubung dengan saya melalui:</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.instagram.com/nimpoxx/" class="text-white hover:text-gray-400">Instagram</a>
+                <a href="https://www.youtube.com/@dmcblood_5565" class="text-white hover:text-gray-400">Youtube</a>
+                <a href="https://github.com/dimasrpl1" class="text-white hover:text-gray-400">Github</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const burgerMenu = document.getElementById('burger-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                burgerMenu.classList.toggle('show');
+                menuToggle.classList.toggle('menu-open');
+            });
+        });
+    </script>
+</body>
+</html>
